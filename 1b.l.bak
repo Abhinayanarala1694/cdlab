@@ -1,0 +1,17 @@
+%{
+#include<stdio.h>
+int nc,pc;
+%}
+%%
+"-"+[1-9]+[1-9] {nc++;}
+[0-9]+[0-9]+[0-9]+ {pc++;}
+
+%%
+int yywrap(){}
+int main()
+{
+printf("enter nums");
+yylex();
+printf("no of positive nums=%d anf no of negtive nums=%d",pc,nc);
+return 0;
+}
